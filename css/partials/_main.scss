@@ -1,0 +1,23 @@
+body {
+    background-color: #080325;
+}
+
+.fila {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    color:aqua;
+}
+.fila label {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.textoDescriptivo {
+    font-family: 'Courier New', monospace;
+    white-space: pre;
+    color: white;
+    margin-left: 10px;
+    margin-top: 11.5px;
+}
+
