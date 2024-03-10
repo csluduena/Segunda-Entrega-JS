@@ -13,7 +13,7 @@ function maquinaDeEscribir(mensaje, elementoID) {
     for (let i = 0; i < mensaje.length; i++) {
         setTimeout(function() {
             document.getElementById(elementoID).innerHTML += mensaje.charAt(i);
-        }, i * 90);
+        }, i * 25);
     }
 }
 
@@ -35,9 +35,20 @@ do {
 
 alert(`Ahora perteneces al mundo del ${personaje[raza]}. ¡Buena elección ` + saludoInicial + "!");
 
+let genero;
+do {
+    genero = prompt("¿Cuál es el género de " + nickName + "?\n1: Hombre\n2: Mujer");
+    if (genero !== "1" && genero !== "2") {
+        alert("Por favor, elige 1 para Hombre o 2 para Mujer.");
+    }
+} while (genero !== "1" && genero !== "2");
+
+let generoTexto = genero === "1" ? "Hombre" : "Mujer";
+
 maquinaDeEscribir(saludoInicial, "userName");
 maquinaDeEscribir(nickName, "nick");
 maquinaDeEscribir(personaje[raza], "personaje"); 
+maquinaDeEscribir(generoTexto, "genero");
 
 //Clases de Personaje
 let clases = {
@@ -101,115 +112,85 @@ alert(`Ahora eres un ${clases[personaje[raza]][clase]}! ¡Buena elección ` + sa
 
 maquinaDeEscribir(clases[personaje[raza]][clase], "clase");
 
+//Array con los atributos base
 let atributosBase = {
-    "🧙‍♂️Magos": {
-        "Inteligencia": 8,
-        "Fuerza": 1,
-        "Agilidad": 5,
-    },
-    "🌿Druida": {
-        "Inteligencia": 6,
-        "Fuerza": 2,
-        "Agilidad": 6,
-    },
-    "🎵Bardo": {
-        "Inteligencia": 10,
-        "Fuerza": 1,
-        "Agilidad": 7,
-    },
-    "⚔️Guerrero": {
-        "Inteligencia": 5,
-        "Fuerza": 15,
-        "Agilidad": 5,
-    },
-    "🔨Herrero": {
-        "Inteligencia": 3,
-        "Fuerza": 18,
-        "Agilidad": 3,
-    },
-    "🛡️Paladin": {
-        "Inteligencia": 8,
-        "Fuerza": 12,
-        "Agilidad": 5,
-    },
-    "🏇Caballero": {
-        "Inteligencia": 2,
-        "Fuerza": 20,
-        "Agilidad": 4,
-    },
-    "🗡️Pícaro": {
-        "Inteligencia": 6,
-        "Fuerza": 7,
-        "Agilidad": 12,
-    },
-    "✨Clerigo": {
-        "Inteligencia": 8,
-        "Fuerza": 10,
-        "Agilidad": 5,
-    },
-    "🪓Berserker": {
-        "Inteligencia": 1,
-        "Fuerza": 25,
-        "Agilidad": 3,
-    },
-    "🔮Chaman": {
-        "Inteligencia": 10,
-        "Fuerza": 8,
-        "Agilidad": 5,
-    },
-    "🏹Cazador": {
-        "Inteligencia": 8,
-        "Fuerza": 10,
-        "Agilidad": 10,
-    },
+    "🧙‍♂️Magos": [8, 1, 5],
+    "🌿Druida": [6, 2, 6],
+    "🎵Bardo": [10, 1, 7],
+    "⚔️Guerrero": [5, 15, 5],
+    "🔨Herrero": [3, 18, 3],
+    "🛡️Paladin": [8, 12, 5],
+    "🏇Caballero": [2, 20, 4],
+    "🗡️Pícaro": [6, 7, 12],
+    "✨Clerigo": [8, 10, 5],
+    "🪓Berserker": [1, 25, 3],
+    "🔮Chaman": [10, 8, 5],
+    "🏹Cazador": [8, 10, 10],
 }
 
 let atributoClase = atributosBase[clases[personaje[raza]][clase]];
 
-alert("Ok, " + saludoInicial + "!\nEste es tu personaje:\nSu nombre es " + nickName + " y es un " + clases[personaje[raza]][clase] + " - " + personaje[raza] + ";\nEstos son sus atributos base:\n🧠Inteligencia: " + atributoClase["Inteligencia"] + "\n💪Fuerza: " + atributoClase["Fuerza"] + "\n🤸🏻‍♀️Agilidad: " + atributoClase["Agilidad"]);
+alert("Ok, " + saludoInicial + "!\nEste es tu personaje:\nSu nombre es " + nickName + " y es un " + clases[personaje[raza]][clase] + " - " + personaje[raza] + ";\nEstos son sus atributos base:\n🧠Inteligencia: " + atributoClase[0] + "\n💪Fuerza: " + atributoClase[1] + "\n🤸🏻‍♀️Agilidad: " + atributoClase[2]);
 
-maquinaDeEscribir(atributoClase["Inteligencia"].toString(), "Inteligencia");
-maquinaDeEscribir(atributoClase["Fuerza"].toString(), "Fuerza");
-maquinaDeEscribir(atributoClase["Agilidad"].toString(), "Agilidad");
+maquinaDeEscribir(atributoClase[0].toString(), "Inteligencia");
+maquinaDeEscribir(atributoClase[1].toString(), "Fuerza");
+maquinaDeEscribir(atributoClase[2].toString(), "Agilidad");
 
+let mensajePostPj = "¡Excelente " + saludoInicial + "! Ya tenemos listo a " + nickName + " para la aventura. Nos queda un paso, a continuación tirarás 2 dados por cada atributo base que tiene " + nickName +  "! 'Mucha suerte con la suerte!'😆";
 
+maquinaDeEscribir(mensajePostPj, "mensajePostPj");
 
+let tiempoMensaje = mensajePostPj.length * 25;
+setTimeout(function() {
+    let boton = document.createElement("button");
+    boton.innerHTML = "Continuar";
 
+    boton.style.backgroundColor = "#080325";
+    boton.style.border = "1px solid #7407cd";
+    boton.style.color = "#00ffff";
+    boton.style.textAlign = "center";
+    boton.style.cursor = "pointer";
+    boton.style.marginTop = "2rem";
+    boton.style.marginLeft = "1.1rem";
+    boton.style.borderRadius = "5px"; 
+    boton.style.padding = "3px 3px"
 
+    boton.addEventListener("mouseover", function() {
+        boton.style.color = "#7407cd";
+        boton.style.backgroundColor = "#00ffff";
+    });
 
+    boton.addEventListener("mouseout", function() {
+        boton.style.color = "#00ffff";
+        boton.style.backgroundColor = "#080325";
+    });
 
+    boton.addEventListener('click', lanzarDados);
+    
+    boton.addEventListener('click', function() {
+        setTimeout(function() {
+            boton.style.display = "none";
+        }, 500); //quitamos el continuar en medio segundo.
+    });
 
+    document.body.appendChild(boton);
+}, tiempoMensaje);
 
+function lanzarDados() {
+    let atributos = ["Inteligencia", "Fuerza", "Agilidad"];
+    for (let i = 0; i < atributos.length; i++) {
+        let valorOriginal = atributoClase[i];
+        let dado1 = Math.floor(Math.random() * 6) + 1;
+        let dado2 = Math.floor(Math.random() * 6) + 1;
+        let totalDados = dado1 + dado2;
+        atributoClase[i] += totalDados;
+        
+        alert(`La suerte, proviene en forma de 2 dados de 6 caras, y al arrojarlos te devuelve un total de ${totalDados}.\nAhora tu atributo de ${atributos[i]} tiene un valor de: ${atributoClase[i]}`);
+        
+        let nuevoTexto = "(Base) + 🎲" + totalDados + " = " + atributoClase[i] + "(Total)";
 
+        maquinaDeEscribir(nuevoTexto, atributos[i]);
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-// Elfos: 
-// Mago: Usuarios de magia poderosa y destructiva.
-// Druidas: Capaces de manipular la magia de la naturaleza.
-// Bardos: Artistas talentosos con habilidades mágicas únicas.
-
-// Enanos: 
-// Guerreros: Combatientes fuertes y resistentes.
-// Herreros: Maestros de la creación y mejora de armas y armaduras.
-// Paladines: Defensores valientes con habilidades de curación.
-
-// Humanos: 
-// Caballeros: Protectores leales con una gran habilidad en el combate cuerpo a cuerpo.
-// Pícaros: Maestros del sigilo y la astucia, expertos en trampas y robos.
-// Clerigos: Sanadores y protectores con habilidades mágicas divinas.
-
-// Orcos: 
-// Berserkers: Combatientes salvajes que entran en frenesí en la batalla.
-// Chamanes: Conectados con los espíritus y capaces de usar magia elemental.
-// Cazadores: Expertos en rastreo y combate a distancia.
 

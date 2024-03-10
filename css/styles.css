@@ -4,14 +4,15 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #080325;
+.bodyIndex {
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
 
 .fila {
   display: flex;
   align-items: center;
-  color: aqua;
+  color: #00ffff;
   margin-left: 2.1rem;
   margin-top: 10px;
 }
@@ -24,12 +25,20 @@ body {
   display: flex;
   align-items: center;
   margin-left: 1.1rem;
-  color: rgb(116, 7, 205);
+  color: #7407cd;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .textoDescriptivo {
   font-family: "Courier New", monospace;
   white-space: pre;
   color: white;
+}
+
+.configMensajitoPj {
+  color: #fff;
+  margin-top: 2rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }/*# sourceMappingURL=styles.css.map */
