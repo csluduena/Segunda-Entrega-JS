@@ -59,7 +59,7 @@
 
 body {
   background-color: darkblue;
-  background-image: url(../../img/bcground2.png);
+  background-image: url(./../img/bcground2.png);
 }
 
 .tituloMain {
