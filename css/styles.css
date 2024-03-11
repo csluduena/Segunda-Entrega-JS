@@ -55,4 +55,166 @@
   font-size: 22px;
   margin-right: 5rem;
   text-shadow: -3px 0px 2px black, 0px 2px 2px black, 0px -1px 2px black, 2px 0 0 black;
+}
+
+body {
+  background-color: darkblue;
+  background-image: url(../../img/bcground2.png);
+}
+
+.tituloMain {
+  margin-top: 2rem;
+  font-family: "pamela";
+  font-size: 60px;
+  color: black;
+}
+
+.tituloMain2 {
+  margin-top: -4.1rem;
+  font-family: "pamela";
+  font-size: 60px;
+  color: white;
+  filter: opacity(10%);
+}
+
+.infoPj {
+  text-align: center;
+  color: black;
+  margin-top: 3rem;
+  margin-bottom: 10px;
+}
+
+.textCfg {
+  text-align: center;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.configH3 {
+  text-align: center;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.info-personaje {
+  margin-top: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-width: 377px;
+  height: 627px;
+}
+
+#descargarPersonaje {
+  cursor: pointer;
+}
+
+#cargarPersonaje {
+  cursor: pointer;
+}
+
+#borrarPersonaje {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.cntBtn {
+  display: flex;
+  justify-content: center;
+}
+
+.botonBackIndex {
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 12rem;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.botonBackIndex:hover {
+  color: white;
+  background-color: black;
+}
+
+.alinearInformacion {
+  padding-top: 25rem;
+}
+
+.spaceInfoTop {
+  color: white;
+  text-shadow: -3px 0px 2px black, 0px 2px 2px black, 0px -1px 2px black, 2px 0 0 black;
+}
+
+.colorTitulos {
+  color: red;
+  font-size: 20px;
+  text-shadow: -3px 0px 2px black, 0px 2px 2px black, 0px -1px 2px black, 2px 0 0 black;
+}
+
+#nickPersonaje, #origen, #genero, #clase {
+  color: white;
+}
+
+#inteligencia {
+  color: cornflowerblue;
+  font-weight: bolder;
+  font-size: 22px;
+  text-shadow: -3px 0px 2px black, 0px 2px 2px black, 0px -1px 2px black, 2px 0 0 black;
+}
+
+#fuerza {
+  color: red;
+  font-weight: bolder;
+  font-size: 22px;
+  text-shadow: -3px 0px 2px black, 0px 2px 2px black, 0px -1px 2px black, 2px 0 0 black;
+}
+
+#agilidad {
+  color: green;
+  font-weight: bolder;
+  font-size: 22px;
+  text-shadow: -3px 0px 2px black, 0px 2px 2px black, 0px -1px 2px black, 2px 0 0 black;
+}
+
+.spaceInfoBot {
+  padding-bottom: 1rem;
+}
+
+.centrarAtributos {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.colorTituloAtr {
+  margin-top: 1.2rem;
+  color: aqua;
+}
+
+.colorAtr {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  color: white;
+  text-shadow: -3px 0px 2px black, 0px 2px 2px black, 0px -1px 2px black, 2px 0 0 black;
+}
+
+.configCompartidaDeInfoDePersonaje {
+  text-align: center;
+}
+
+@font-face {
+  font-family: "pamela";
+  src: url(../fonts/Pamela.ttf);
 }/*# sourceMappingURL=styles.css.map */

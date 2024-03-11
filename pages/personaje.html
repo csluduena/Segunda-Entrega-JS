@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,24 +12,50 @@
     
     </header>
     <main>
-        <div class="info-personaje">
-            <h1>Información del Personaje</h1>
-            <p>Nombre del usuario: <span id="userName"></span></p>
-            <p>Nick del personaje: <span id="nick"></span></p>
-            <p>Origen (Raza): <span id="personaje"></span></p>
-            <p>Género: <span id="genero"></span></p>
-            <p>Clase: <span id="clase"></span></p>
-            <p>Atributos:</p>
-            <p>Inteligencia: <span id="Inteligencia"></span></p>
-            <p>Fuerza: <span id="Fuerza"></span></p>
-            <p>Agilidad: <span id="Agilidad"></span></p>
+        <div class="configCompartidaDeInfoDePersonaje">
+        <p class="tituloMain">Información del Personaje</p>
+        <p class="tituloMain2">Información del Personaje</p>
+        
+            <div class="info-personaje">
+                <!-- <p class="spaceInfoTop">Nombre del usuario: <span id="nombreUsuario"></span></p> -->
+                <div class="alinearInformacion">
+                    <p class="spaceInfoTop, colorTitulos">Nombre: <span id="nickPersonaje"></span></p>
+                    <p class="spaceEntreInfo, colorTitulos">Origen: <span id="origen"></span></p>
+                    <p class="spaceEntreInfo, colorTitulos">Género: <span id="genero"></span></p>
+                    <p class="spaceEntreInfo, colorTitulos">Clase: <span id="clase"></span></p>
+                    <p class="spaceEntreInfo, colorTituloAtr"></p>
+                </div>
+                <div class="centrarAtributos">
+                    <p class="spaceEntreInfo, colorAtr">INT<span id="inteligencia"></span></p>
+                    &nbsp &nbsp<p class="spaceEntreInfo, colorAtr">STR<span id="fuerza"></span></p>
+                    &nbsp &nbsp<p class="spaceInfoBot, colorAtr">AGI<span id="agilidad"></span></p>
+                </div>
+            </div>
         </div>
+
+        <div class="infoPj">
+
+            <h3 class="configH3">Importar/Exportar</h3>
+            <p class="textCfg">Aquí puedes guardar tu personaje, importar uno, o incluso borrarlo si así lo deseas!</p>
+
+            <button id="descargarPersonaje">Descargar Personaje</button>
+            
+            <button id="cargarPersonaje">Cargar Personaje</button>
+            <input type="file" id="cargarPersonaje" style="display: none;">
+            
+            <button id="borrarPersonaje">Borrar Personaje</button>
+        </div>
+
     </main>
     <footer>
-    
+        <div class="cntBtn">
+            <div class="botonBackIndex">
+                <a href="../index.html">Crear Nuevo Personaje</a>
+            </div>
+        </div>
     </footer>
     
 
-    <script src="./js/welcome.js"></script>
+    <script src="./../js/personaje.js"></script>
 </body>
-</html> -->
+</html>

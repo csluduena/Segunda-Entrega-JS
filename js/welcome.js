@@ -53,24 +53,24 @@ maquinaDeEscribir(generoTexto, "genero");
 //Clases de Personaje
 let clases = {
     "Elfo": {
-        1: "🧙‍♂️Mago", 
-        2: "🌿Druida",
-        3: "🎵Bardo"
+        1: "Mago", //🧙‍♂️
+        2: "Druida", //🌿
+        3: "Bardo" //🎵
     },
     "Enano": {
-        1: "⚔️Guerrero",
-        2: "🔨Herrero",
-        3: "🛡️Paladin"
+        1: "Guerrero", //⚔️
+        2: "Herrero", //🔨
+        3: "Paladin" //🛡️
     },
     "Humano": {
-        1: "🏇Caballero",
-        2: "🗡️Pícaro",
-        3: "✨Clerigo"
+        1: "Caballero", //🏇
+        2: "Pícaro", //🗡️
+        3: "Clerigo" //✨
     },
     "Orco": {
-        1: "🪓Berserker",
-        2: "🔮Chaman",
-        3: "🏹Cazador"
+        1: "Berserker", //🪓
+        2: "Chaman", //🔮
+        3: "Cazador" //🏹
     }
 };
 
@@ -114,18 +114,18 @@ maquinaDeEscribir(clases[personaje[raza]][clase], "clase");
 
 //Array con los atributos base
 let atributosBase = {
-    "🧙‍♂️Mago": [8, 1, 5],
-    "🌿Druida": [6, 2, 6],
-    "🎵Bardo": [10, 1, 7],
-    "⚔️Guerrero": [5, 15, 5],
-    "🔨Herrero": [3, 18, 3],
-    "🛡️Paladin": [8, 12, 5],
-    "🏇Caballero": [2, 20, 4],
-    "🗡️Pícaro": [6, 7, 12],
-    "✨Clerigo": [8, 10, 5],
-    "🪓Berserker": [1, 25, 3],
-    "🔮Chaman": [10, 8, 5],
-    "🏹Cazador": [8, 10, 10],
+    "Mago": [8, 1, 5], //🧙‍♂️
+    "Druida": [6, 2, 6], //🌿
+    "Bardo": [10, 1, 7], //🎵
+    "Guerrero": [5, 15, 5], //⚔️
+    "Herrero": [3, 18, 3], //🔨
+    "Paladin": [8, 12, 5], //🛡️
+    "Caballero": [2, 20, 4], //🏇
+    "Pícaro": [6, 7, 12], //🗡️
+    "Clerigo": [8, 10, 5], //✨
+    "Berserker": [1, 25, 3], //🪓
+    "Chaman": [10, 8, 5], //🔮
+    "Cazador": [8, 10, 10], //🏹
 }
 
 let atributoClase = atributosBase[clases[personaje[raza]][clase]];
@@ -246,3 +246,12 @@ function lanzarDados() {
     }
 }
 
+//Guardamos la info localmente.
+localStorage.setItem('nombreUsuario', saludoInicial);
+localStorage.setItem('nickPersonaje', nickName);
+localStorage.setItem('origen', personaje[raza]);
+localStorage.setItem('genero', generoTexto);
+localStorage.setItem('clase', clases[personaje[raza]][clase]);
+localStorage.setItem('inteligencia', atributoClase[0]);
+localStorage.setItem('fuerza', atributoClase[1]);
+localStorage.setItem('agilidad', atributoClase[2]);
