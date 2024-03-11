@@ -1,9 +1,9 @@
 // Recupera la información del almacenamiento local
 let nombreUsuario = localStorage.getItem('nombreUsuario');
 let nickPersonaje = localStorage.getItem('nickPersonaje');
-let origen = localStorage.getItem('origen');
+let origen = localStorage.getItem('origen') || '';
 let genero = localStorage.getItem('genero');
-let clase = localStorage.getItem('clase');
+let clase = localStorage.getItem('clase') || '';
 let inteligencia = localStorage.getItem('inteligencia');
 let fuerza = localStorage.getItem('fuerza');
 let agilidad = localStorage.getItem('agilidad');
@@ -33,8 +33,9 @@ document.getElementById('borrarPersonaje').addEventListener('click', function() 
         localStorage.removeItem('inteligencia');
         localStorage.removeItem('fuerza');
         localStorage.removeItem('agilidad');
-
         
+        document.querySelector('.info-personaje').style.backgroundImage = `url('./../img/cartas/emptyCard.png')`;
+
         location.reload();
     }
 });
@@ -99,7 +100,7 @@ document.getElementById('cargarPersonaje').addEventListener('click', function() 
 //Personalización del fondo del personaje
 // Convierte la raza, clase y género a formato de nombre de archivo
 let razaArchivo = origen.toLowerCase();
-let claseArchivo = clase.replace(' ', '_');
+let claseArchivo = clase.replace(' ', ' ');
 let generoArchivo = genero === 'Hombre' ? 'Hombre' : 'Mujer';
 
 // Crea el nombre del archivo

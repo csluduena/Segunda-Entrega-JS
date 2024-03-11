@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+#content {
+  display: none;
+}
+
 .bodyIndex img {
   z-index: -1;
   position: absolute;
@@ -59,7 +63,7 @@
 
 body {
   background-color: darkblue;
-  background-image: url(./../img/bcground2.png);
+  background-image: url(./../img/3bcground2.png);
 }
 
 .tituloMain {
@@ -67,14 +71,7 @@ body {
   font-family: "pamela";
   font-size: 60px;
   color: black;
-}
-
-.tituloMain2 {
-  margin-top: -4.1rem;
-  font-family: "pamela";
-  font-size: 60px;
-  color: white;
-  filter: opacity(10%);
+  text-shadow: -3px 0px 2px rgb(255, 255, 255), 0px 2px 2px rgb(211, 113, 78), 0px -1px 2px rgb(23, 207, 244), 2px 0 0 rgb(213, 237, 33);
 }
 
 .infoPj {
@@ -86,14 +83,18 @@ body {
 
 .textCfg {
   text-align: center;
-  color: black;
+  color: rgb(255, 255, 255);
   margin-bottom: 10px;
+  text-shadow: -3px 0px 2px rgb(0, 0, 0), 0px 2px 2px rgb(0, 0, 0), 0px -1px 2px rgb(0, 0, 0), 2px 0 0 rgb(0, 0, 0);
+  font-size: 18px;
 }
 
 .configH3 {
+  font-size: 22px;
   text-align: center;
   color: black;
   margin-bottom: 10px;
+  text-shadow: -3px 0px 2px #ffffff, 0px 2px 2px rgb(255, 255, 255), 0px -1px 2px rgb(255, 255, 255), 2px 0 0 rgb(255, 255, 255);
 }
 
 .info-personaje {
@@ -109,12 +110,27 @@ body {
   cursor: pointer;
 }
 
+#descargarPersonaje:hover {
+  color: white;
+  background-color: rgb(79, 79, 79);
+}
+
 #cargarPersonaje {
   cursor: pointer;
 }
 
+#cargarPersonaje:hover {
+  color: white;
+  background-color: rgb(79, 79, 79);
+}
+
 #borrarPersonaje {
   cursor: pointer;
+}
+
+#borrarPersonaje:hover {
+  color: white;
+  background-color: rgb(79, 79, 79);
 }
 
 a {
@@ -128,12 +144,13 @@ a {
 
 .botonBackIndex {
   display: flex;
+  color: black;
   justify-content: center;
-  background-color: #ffffff;
+  background-color: #efefef;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 3px;
   margin-top: 1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   padding-top: 5px;
   padding-bottom: 5px;
   width: 12rem;

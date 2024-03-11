@@ -1,3 +1,13 @@
+
+
+document.getElementById('start-button').addEventListener('click', function() {
+    // Muestra todo el contenido
+document.getElementById('content').style.display = 'block';
+// Oculta el botón de inicio
+this.style.display = 'none';
+
+// Aquí comienza tu código JavaScript
+
 //Alertas Iniciales:
 alert("Bienvenido/a a Brayanne's Quest: En búsqueda del nombre perdido.");
 
@@ -9,21 +19,21 @@ let saludoInicial = prompt("¿Cómo te llamas?");
 alert("Bienvenido/a " + saludoInicial + "! A continuación vamos a crear tu personaje para esta nueva aventura!");
 
 let nickName = prompt("¡Elije un Nick para tu personaje!");
-function maquinaDeEscribir(mensaje, elementoID) {
-    for (let i = 0; i < mensaje.length; i++) {
-        setTimeout(function() {
-            document.getElementById(elementoID).innerHTML += mensaje.charAt(i);
-        }, i * 15);
+    function maquinaDeEscribir(mensaje, elementoID) {
+        for (let i = 0; i < mensaje.length; i++) {
+            setTimeout(function() {
+                document.getElementById(elementoID).innerHTML += mensaje.charAt(i);
+            }, i * 15);
+        }
     }
-}
 
-//Elegir Raza y Clase.
-let personaje = {
-    1: "Elfo",
-    2: "Enano",
-    3: "Humano",
-    4: "Orco",
-};
+    //Elegir Raza y Clase.
+    let personaje = {
+        1: "Elfo",
+        2: "Enano",
+        3: "Humano",
+        4: "Orco",
+    };
 
 let raza;
 do {
@@ -255,3 +265,5 @@ localStorage.setItem('clase', clases[personaje[raza]][clase]);
 localStorage.setItem('inteligencia', atributoClase[0]);
 localStorage.setItem('fuerza', atributoClase[1]);
 localStorage.setItem('agilidad', atributoClase[2]);
+
+});
