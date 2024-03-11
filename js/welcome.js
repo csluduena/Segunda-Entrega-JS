@@ -13,7 +13,7 @@ function maquinaDeEscribir(mensaje, elementoID) {
     for (let i = 0; i < mensaje.length; i++) {
         setTimeout(function() {
             document.getElementById(elementoID).innerHTML += mensaje.charAt(i);
-        }, i * 25);
+        }, i * 15);
     }
 }
 
@@ -114,7 +114,7 @@ maquinaDeEscribir(clases[personaje[raza]][clase], "clase");
 
 //Array con los atributos base
 let atributosBase = {
-    "🧙‍♂️Magos": [8, 1, 5],
+    "🧙‍♂️Mago": [8, 1, 5],
     "🌿Druida": [6, 2, 6],
     "🎵Bardo": [10, 1, 7],
     "⚔️Guerrero": [5, 15, 5],
@@ -140,11 +140,16 @@ let mensajePostPj = "¡Excelente " + saludoInicial + "! Ya tenemos listo a " + n
 
 maquinaDeEscribir(mensajePostPj, "mensajePostPj");
 
-let tiempoMensaje = mensajePostPj.length * 25;
+let tiempoMensaje = mensajePostPj.length * 15;
 setTimeout(function() {
     let boton = document.createElement("button");
     boton.innerHTML = "Continuar";
 
+    boton.style.position = "absolute";
+    boton.style.left = "50%";
+    boton.style.transform = "translateX(-50%)";
+    boton.style.width = "200px";
+    boton.style.height = "50px";
     boton.style.backgroundColor = "#080325";
     boton.style.border = "1px solid #7407cd";
     boton.style.color = "#00ffff";
@@ -168,10 +173,58 @@ setTimeout(function() {
     boton.addEventListener('click', lanzarDados);
     
     boton.addEventListener('click', function() {
+    setTimeout(function() {
+        boton.style.display = "none";
         setTimeout(function() {
-            boton.style.display = "none";
-        }, 500); //quitamos el continuar en medio segundo.
-    });
+            let botonNuevo = document.createElement("button");
+            botonNuevo.innerHTML = "Conozcamos a tu personaje";
+
+            botonNuevo.style.position = "absolute";
+            botonNuevo.style.left = "50%";
+            botonNuevo.style.transform = "translateX(-50%)";
+            botonNuevo.style.width = "200px";
+            botonNuevo.style.height = "50px";
+            botonNuevo.style.backgroundColor = "#080325";
+            botonNuevo.style.border = "1px solid #7407cd";
+            botonNuevo.style.color = "#00ffff";
+            botonNuevo.style.textAlign = "center";
+            botonNuevo.style.cursor = "pointer";
+            botonNuevo.style.marginTop = "2rem";
+            botonNuevo.style.marginLeft = "1.1rem";
+            botonNuevo.style.borderRadius = "5px"; 
+            botonNuevo.style.padding = "3px 3px"
+            botonNuevo.style.width = "200px";
+            botonNuevo.style.height = "50px";
+
+            botonNuevo.addEventListener("mouseover", function() {
+                botonNuevo.style.color = "#7407cd";
+                botonNuevo.style.backgroundColor = "#00ffff";
+            });
+
+            botonNuevo.addEventListener("mouseout", function() {
+                botonNuevo.style.color = "#00ffff";
+                botonNuevo.style.backgroundColor = "#080325";
+            });
+
+            botonNuevo.addEventListener('click', function() {
+                window.location.href = "pages/personaje.html";
+            });
+
+            let botonGlow = false;
+
+            setInterval(function() {
+                if (botonGlow) {
+                    botonNuevo.style.boxShadow = "0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 20px #ffffff, 0 0 25px #ffffff, 0 0 30px #ffffff";
+                } else {
+                    botonNuevo.style.boxShadow = "none";
+                }
+                botonGlow = !botonGlow;
+            }, 250);
+
+            document.body.appendChild(botonNuevo);
+        }, 250);
+    }, 250);
+});
 
     document.body.appendChild(boton);
 }, tiempoMensaje);
@@ -192,5 +245,4 @@ function lanzarDados() {
         maquinaDeEscribir(nuevoTexto, atributos[i]);
     }
 }
-
 
