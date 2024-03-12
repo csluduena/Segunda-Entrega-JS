@@ -1,9 +1,9 @@
 // Recupera la información del almacenamiento local
 let nombreUsuario = localStorage.getItem('nombreUsuario');
 let nickPersonaje = localStorage.getItem('nickPersonaje');
-let origen = localStorage.getItem('origen') || '' || "x";
+let origen = localStorage.getItem('origen') || '';
 let genero = localStorage.getItem('genero');
-let clase = localStorage.getItem('clase') || '' || "x";
+let clase = localStorage.getItem('clase') || '';
 let inteligencia = localStorage.getItem('inteligencia');
 let fuerza = localStorage.getItem('fuerza');
 let agilidad = localStorage.getItem('agilidad');
