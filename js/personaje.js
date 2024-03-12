@@ -107,3 +107,8 @@ let nombreArchivo = `${razaArchivo}_${claseArchivo}_${generoArchivo}.png`;
 
 // Asigna el fondo al div .info-personaje
 document.querySelector('.info-personaje').style.backgroundImage = `url('./../img/cartas/${nombreArchivo}')`;
+
+let carta = document.getElementById('__Mujer.png');
+
+// Cuando decidas borrar una carta, cambia su imagen a "cartaVacia.png"
+carta.src = "./../img/cartas/cartaVacia.png";
