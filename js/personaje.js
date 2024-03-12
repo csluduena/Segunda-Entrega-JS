@@ -1,9 +1,9 @@
 // Recupera la información del almacenamiento local
 let nombreUsuario = localStorage.getItem('nombreUsuario');
 let nickPersonaje = localStorage.getItem('nickPersonaje');
-let origen = localStorage.getItem('origen') || '';
+let origen = localStorage.getItem('origen') || '' || "x";
 let genero = localStorage.getItem('genero');
-let clase = localStorage.getItem('clase') || '';
+let clase = localStorage.getItem('clase') || '' || "x";
 let inteligencia = localStorage.getItem('inteligencia');
 let fuerza = localStorage.getItem('fuerza');
 let agilidad = localStorage.getItem('agilidad');
@@ -106,4 +106,4 @@ let generoArchivo = genero === 'Hombre' ? 'Hombre' : 'Mujer';
 let nombreArchivo = `${razaArchivo}_${claseArchivo}_${generoArchivo}.png`;
 
 // Asigna el fondo al div .info-personaje
-document.querySelector('.info-personaje').style.backgroundImage = `url('./../img/cartas/${nombreArchivo}')`;
+document.querySelector('.info-personaje').style.backgroundImage = `url('./../img/cartas/Mujer.png')`;
