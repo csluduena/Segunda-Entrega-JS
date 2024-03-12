@@ -17,7 +17,7 @@
 }
 
 .start-buttonCFG {
-  background-image: url(../../img/botonStart.gif);
+  background-image: url(../img/botonStart.gif);
   width: 984px;
   height: 472px;
   display: flex;
@@ -30,7 +30,7 @@
 }
 
 .start-buttonCFG:hover {
-  background-image: url(../../img/botonStart2.png);
+  background-image: url(../img/botonStart2.png);
 }
 
 .bodyIndex img {
