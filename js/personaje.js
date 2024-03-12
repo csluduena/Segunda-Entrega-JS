@@ -103,7 +103,7 @@ let claseArchivo = clase.replace(' ', ' ');
 let generoArchivo = genero === 'Hombre' ? 'Hombre' : 'Mujer';
 
 // Crea el nombre del archivo
-let nombreArchivo = `${razaArchivo}_${claseArchivo}_${generoArchivo}.png`;
+let nombreArchivo = `${razaArchivo}${claseArchivo}${generoArchivo}.png`;
 
 // Asigna el fondo al div .info-personaje
-document.querySelector('.info-personaje').style.backgroundImage = `url('./../img/cartas/Mujer.png')`;
+document.querySelector('.info-personaje').style.backgroundImage = `url('./../img/cartas/${nombreArchivo}')`;
