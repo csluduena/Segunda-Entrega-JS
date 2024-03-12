@@ -1,20 +1,22 @@
 document.getElementById('start-button').addEventListener('click', function() {
 // Muestra todo el contenido
-document.getElementById('content').style.display = 'block';
+document.getElementById('content').style.display = 'flex';
+
+
 // Oculta el botón de inicio
 this.style.display = 'none';
 
 // Aquí comienza tu código JavaScript
 
 //Alertas Iniciales:
-alert("Bienvenido/a a Brayanne's Quest: En búsqueda del nombre perdido.");
+alert("¡Bienvenido/a a Legend Builder!");
 
-alert("¡Eres muy valiente al venir aquí! Por favor, preséntate a ti mismo a continuación:");
+alert("Legend Builder - ¡Donde tus personajes cobran vida! Sumérgete en un mundo de fantasía y crea tu propio héroe. Elige su raza, género, clase y atributos. ¡Conviértete en el arquitecto de tu propia leyenda!");
 
 //Prompts de mini presentacion inicial:
 let saludoInicial = prompt("¿Cómo te llamas?");
 
-alert("Bienvenido/a " + saludoInicial + "! A continuación vamos a crear tu personaje para esta nueva aventura!");
+alert("Bienvenido/a " + saludoInicial + "! Vamos a crear a tu propio héroe legendario. Prepárate para dar vida a un personaje único en Legend Builder!");
 
 let nickName = prompt("¡Elije un Nick para tu personaje!");
     function maquinaDeEscribir(mensaje, elementoID) {
@@ -144,7 +146,7 @@ maquinaDeEscribir(atributoClase[0].toString(), "Inteligencia");
 maquinaDeEscribir(atributoClase[1].toString(), "Fuerza");
 maquinaDeEscribir(atributoClase[2].toString(), "Agilidad");
 
-let mensajePostPj = "¡Excelente " + saludoInicial + "! Ya tenemos listo a " + nickName + " para la aventura. Nos queda un paso, a continuación tirarás 2 dados por cada atributo base que tiene " + nickName +  "! 'Mucha suerte con la suerte!'😆";
+let mensajePostPj = "¡Excelente " + saludoInicial + "!\nYa tenemos listo a " + nickName + " para la aventura.\nNos queda un paso, a continuación tirarás 2 dados por cada atributo base que tiene " + nickName +  "! 'Mucha suerte con la suerte!'😆";
 
 maquinaDeEscribir(mensajePostPj, "mensajePostPj");
 

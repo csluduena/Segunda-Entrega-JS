@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Legend Builder</title>
     <link rel="stylesheet" href="./css/styles.css">
     </head>
     <body class="bodyIndex"><img src="./img/1bcground1.png" alt="bgnd">
@@ -14,45 +14,48 @@
     </header>
     <main>
         <!--Main Area-->
-        <div id="content">
+        <div id="content" class="centerContent">
             <div class="titulos">
-                <label for="userName" class="space">Nombre: </label>
-                <div id="userName" class="textoDescriptivo"></div>
+                <label for="userName" class="space, configAtrI">Nombre:&nbsp</label>
+                <div id="userName" class="textoDescriptivo, otrasConfigs"></div>
             </div>
+            <hr>
             <div class="tablaDePersonaje"></div>
             <div class="fila">
-                <label for="nick" class="space">Nick: </label>
-                <div id="nick" class="textoDescriptivo"></div>
+                <label for="nick" class="space, titulosIndex">Nick:&nbsp</label>
+                <div id="nick" class="textoDescriptivo "></div>
             </div>
             <div class="fila">
-                <label for="personaje" class="space">Origen: </label>
+                <label for="personaje" class="space, titulosIndex">Origen:&nbsp</label>
                 <div id="personaje" class="textoDescriptivo"></div>
             </div>
             <div class="fila">
-                <label for="genero" class="space">Genero: </label>
+                <label for="genero" class="space, titulosIndex">Genero:&nbsp</label>
                 <div id="genero" class="textoDescriptivo"></div>
             </div>
             <div class="fila">
-                <label for="clase" class="space">Clase: </label>
+                <label for="clase" class="space, titulosIndex">Clase:&nbsp</label>
                 <div id="clase" class="textoDescriptivo"></div>
             </div>
             <div class="titulos">
-                <label for="Atributos" class="space">Atributos</label>
+                <label for="Atributos, atributos" class="space, configAtrI">Atributos</label>
             </div>
             <div class="fila">
-                <label for="Inteligencia" class="space">Inteligencia: </label>
+                <label for="Inteligencia" class="space, colorCian">Inteligencia:&nbsp</label>
                 <div id="Inteligencia" class="textoDescriptivo"></div>
             </div>
             <div class="fila">
-                <label for="Fuerza" class="space">Fuerza: </label>
+                <label for="Fuerza" class="space, colorRojo">Fuerza:&nbsp</label>
                 <div id="Fuerza" class="textoDescriptivo"></div>
             </div>
             <div class="fila">
-                <label for="Agilidad" class="space">Agilidad: </label>
+                <label for="Agilidad" class="space, colorVerde">Agilidad:&nbsp</label>
                 <div id="Agilidad" class="textoDescriptivo"></div>
             </div>
 
             <div id="mensajePostPj" class="configMensajitoPj"></div>
+            
+            <hr>
 
             <div id="cartaPersonaje"></div>
         </div>

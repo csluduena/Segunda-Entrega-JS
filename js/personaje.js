@@ -97,7 +97,6 @@ document.getElementById('cargarPersonaje').addEventListener('click', function() 
     input.click();
 });
 
-//Personalización del fondo del personaje
 // Convierte la raza, clase y género a formato de nombre de archivo
 let razaArchivo = origen.toLowerCase();
 let claseArchivo = clase.replace(' ', ' ');
