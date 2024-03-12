@@ -10,14 +10,14 @@
 }
 
 .centerContent {
-  margin-top: 4rem;
+  margin-top: 9rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .start-buttonCFG {
-  background-image: url(../../img/botonStart.png);
+  background-image: url(../../img/botonStart.gif);
   width: 984px;
   height: 472px;
   display: flex;
@@ -114,33 +114,78 @@ hr {
 }
 
 .configMensajitoPj {
-  color: #2d054e;
+  font-family: sans-serif;
+  color: #f7f7f7;
   margin-top: 2rem;
   margin-left: 30%;
   margin-right: 30%;
   margin-bottom: 2rem;
+  border-radius: 10px;
+  background-color: rgba(128, 128, 128, 0.801);
   font-size: 26px;
   font-weight: bold;
-  text-shadow: -3px 0px 2px #ffffff, 0px 2px 2px #ffffff, 0px -1px 2px #ffffff, 2px 0 0 #ffffff;
+  text-shadow: -3px 0px 2px black, 0px 2px 2px black, 0px -1px 2px black, 2px 0 0 black;
 }
 
 body {
   background-color: darkblue;
   background-image: url(./../img/3bcground2.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.legendBuilder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.legend {
+  justify-content: center;
+  font-family: "pamela";
+  font-size: 200px;
+  display: flex;
+  margin-left: 2rem;
+  margin-right: 4rem;
+  filter: opacity(50%);
+}
+
+.configLegend {
+  display: flex;
+}
+
+.configBuilder {
+  display: flex;
+}
+
+.builder {
+  font-family: "pamela";
+  font-size: 200px;
+  display: flex;
+  justify-content: center;
+  margin-right: 2rem;
+  margin-left: 4rem;
+  filter: opacity(50%);
+}
+
+.tituloLegendCFG {
+  display: flex;
+  justify-content: center;
 }
 
 .tituloMain {
-  margin-top: 2rem;
-  font-family: "pamela";
-  font-size: 60px;
+  margin-top: 5px;
+  font-family: "whiteStorm";
+  font-size: 140px;
   color: black;
-  text-shadow: -3px 0px 2px rgb(255, 255, 255), 0px 2px 2px rgb(211, 113, 78), 0px -1px 2px rgb(23, 207, 244), 2px 0 0 rgb(213, 237, 33);
+  text-shadow: -3px 0px 2px rgb(230, 230, 230), 0px 2px 2px rgb(221, 221, 221), 0px -1px 2px rgb(23, 207, 244), 2px 0 0 rgb(135, 150, 236);
+  filter: opacity(80%);
 }
 
 .infoPj {
   text-align: center;
   color: black;
-  margin-top: 3rem;
   margin-bottom: 10px;
 }
 
@@ -161,7 +206,7 @@ body {
 }
 
 .info-personaje {
-  margin-top: 2rem;
+  margin-top: 1rem;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -171,6 +216,7 @@ body {
 
 #descargarPersonaje {
   cursor: pointer;
+  margin-top: 2rem;
 }
 
 #descargarPersonaje:hover {
@@ -227,7 +273,7 @@ a {
 }
 
 .alinearInformacion {
-  padding-top: 25rem;
+  padding-top: 26rem;
 }
 
 .spaceInfoTop {
@@ -236,9 +282,10 @@ a {
 }
 
 .colorTitulos {
-  color: red;
+  color: rgb(0, 0, 0);
   font-size: 20px;
-  text-shadow: -3px 0px 2px black, 0px 2px 2px black, 0px -1px 2px black, 2px 0 0 black;
+  font-family: robotoRegular;
+  font-weight: bold;
 }
 
 #nickPersonaje, #origen, #genero, #clase {
@@ -297,4 +344,12 @@ a {
 @font-face {
   font-family: "pamela";
   src: url(../fonts/Pamela.ttf);
+}
+@font-face {
+  font-family: "whiteStorm";
+  src: url(../fonts/whiteStorm.otf);
+}
+@font-face {
+  font-family: "robotoRegular";
+  src: url(../fonts/robotoRegular.ttf);
 }/*# sourceMappingURL=styles.css.map */

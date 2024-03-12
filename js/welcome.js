@@ -13,13 +13,27 @@ alert("¡Bienvenido/a a Legend Builder!");
 
 alert("Legend Builder - ¡Donde tus personajes cobran vida! Sumérgete en un mundo de fantasía y crea tu propio héroe. Elige su raza, género, clase y atributos. ¡Conviértete en el arquitecto de tu propia leyenda!");
 
-//Prompts de mini presentacion inicial:
-let saludoInicial = prompt("¿Cómo te llamas?");
+let saludoInicial;
+do {
+    saludoInicial = prompt("¿Cómo te llamas?");
+} while (!saludoInicial || !isNaN(saludoInicial));
+
+if (!saludoInicial || !isNaN(saludoInicial)) {
+    alert("Introduzca un nombre por favor!");
+}
 
 alert("Bienvenido/a " + saludoInicial + "! Vamos a crear a tu propio héroe legendario. Prepárate para dar vida a un personaje único en Legend Builder!");
 
-let nickName = prompt("¡Elije un Nick para tu personaje!");
-    function maquinaDeEscribir(mensaje, elementoID) {
+let nickName;
+do {
+    nickName = prompt("Vamos a ponerle un nick a tu leyenda!");
+} while (!nickName || !isNaN(nickName));
+
+if (!nickName || !isNaN(nickName)) {
+    alert("Introduzca un nick para identificar a su personaje por favor!");
+}
+    
+function maquinaDeEscribir(mensaje, elementoID) {
         for (let i = 0; i < mensaje.length; i++) {
             setTimeout(function() {
                 document.getElementById(elementoID).innerHTML += mensaje.charAt(i);

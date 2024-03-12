@@ -4,14 +4,14 @@
 }
 
 .centerContent {
-    margin-top: 4rem;
+    margin-top: 9rem;
     display:flex;
     flex-direction: column;
     align-items: center;
 }
 
 .start-buttonCFG {
-    background-image: url(../../img/botonStart.png);
+    background-image: url(../../img/botonStart.gif);
     width: 984px;
     height: 472px;
     display: flex;
@@ -113,12 +113,15 @@ hr {
 }
 
 .configMensajitoPj {
-    color: #2d054e;
+    font-family: sans-serif;
+    color: #f7f7f7;
     margin-top: 2rem;
     margin-left: 30%;
     margin-right: 30%;
     margin-bottom: 2rem;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.801);
     font-size: 26px;
     font-weight: bold;
-    text-shadow: -3px 0px 2px #ffffff, 0px 2px 2px #ffffff, 0px -1px 2px #ffffff, 2px 0 0 #ffffff;
+    text-shadow: -3px 0px 2px black, 0px 2px 2px black, 0px -1px 2px black, 2px 0 0 black;
 }

@@ -1,21 +1,66 @@
 body {
     background-color: darkblue;
     background-image: url(./../img/3bcground2.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+.legendBuilder {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.legend {
+    justify-content: center;
+    font-family: "pamela";
+    font-size: 200px;
+    display:flex;
+    // margin-top: 50%;
+    // margin-bottom: 50%;
+    margin-left: 2rem;
+    margin-right: 4rem;
+    filter: opacity(50%);
+}
+
+.configLegend {
+    display:flex;
+}
+
+.configBuilder {
+    display:flex;
+}
+
+.builder {
+    font-family: "pamela";
+    font-size: 200px;
+    display:flex;
+    justify-content: center;
+    // margin-top: 50%;
+    // margin-bottom: 50%;
+    margin-right: 2rem;
+    margin-left: 4rem;
+    filter: opacity(50%);
+}
+
+.tituloLegendCFG { 
+    display:flex;
+    justify-content: center;
 }
 
 .tituloMain {
-    margin-top: 2rem;
-    font-family: "pamela";
-    font-size: 60px;
+    margin-top: 5px;
+    font-family:"whiteStorm";
+    font-size: 140px;
     color: black;
-    text-shadow: -3px 0px 2px rgb(255, 255, 255), 0px 2px 2px rgb(211, 113, 78), 0px -1px 2px rgb(23, 207, 244), 2px 0 0 rgb(213, 237, 33);
-
+    text-shadow: -3px 0px 2px rgb(230, 230, 230), 0px 2px 2px rgb(221, 221, 221), 0px -1px 2px rgb(23, 207, 244), 2px 0 0 rgb(135, 150, 236);
+    filter: opacity(80%);
 }
 
 .infoPj {
     text-align: center;
     color: black;
-    margin-top: 3rem;
     margin-bottom: 10px;
 }
 
@@ -36,7 +81,7 @@ body {
 }
 
 .info-personaje {
-    margin-top: 2rem;
+    margin-top: 1rem;
     background-size:contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -46,6 +91,7 @@ body {
 
 #descargarPersonaje {
     cursor: pointer;
+    margin-top: 2rem;
 }
 
 #descargarPersonaje:hover {
@@ -102,7 +148,7 @@ a {
 }
 
 .alinearInformacion {
-    padding-top: 25rem;
+    padding-top: 26rem;
 }
 
 .spaceInfoTop {
@@ -111,9 +157,11 @@ a {
 }
 
 .colorTitulos {
-    color:red;
+    color:rgb(0, 0, 0);
     font-size: 20px;
-    text-shadow: -3px 0px 2px black, 0px 2px 2px black, 0px -1px 2px black, 2px 0 0 black;
+    font-family: robotoRegular;
+    // text-shadow: -3px 0px 2px black, 0px 2px 2px black, 0px -1px 2px black, 2px 0 0 black;
+    font-weight: bold;
 }
 
 #nickPersonaje, #origen, #genero, #clase {
