@@ -97,18 +97,29 @@ document.getElementById('cargarPersonaje').addEventListener('click', function() 
     input.click();
 });
 
+// // Convierte la raza, clase y género a formato de nombre de archivo
+// let razaArchivo = origen.toLowerCase();
+// let claseArchivo = clase.replace(' ', ' ');
+// let generoArchivo = genero === 'Hombre' ? 'Hombre' : 'Mujer';
+
+// // Crea el nombre del archivo
+// let nombreArchivo = `${razaArchivo}_${claseArchivo}_${generoArchivo}.png`;
+
+// // Asigna el fondo al div .info-personaje
+// document.querySelector('.info-personaje').style.backgroundImage = `url('./../img/cartas/${nombreArchivo}')`;
+
 // Convierte la raza, clase y género a formato de nombre de archivo
-let razaArchivo = origen.toLowerCase();
-let claseArchivo = clase.replace(' ', ' ');
-let generoArchivo = genero === 'Hombre' ? 'Hombre' : 'Mujer';
+let razaArchivo = origen ? origen.toLowerCase() : '';
+let claseArchivo = clase ? clase.replace(' ', ' ') : '';
+let generoArchivo = genero ? (genero === 'Hombre' ? 'Hombre' : 'Mujer') : '';
 
 // Crea el nombre del archivo
-let nombreArchivo = `${razaArchivo}_${claseArchivo}_${generoArchivo}.png`;
+let nombreArchivo;
+if (razaArchivo && claseArchivo && generoArchivo) {
+    nombreArchivo = `${razaArchivo}_${claseArchivo}_${generoArchivo}.png`;
+} else {
+    nombreArchivo = "cartaVacia.png";
+}
 
 // Asigna el fondo al div .info-personaje
 document.querySelector('.info-personaje').style.backgroundImage = `url('./../img/cartas/${nombreArchivo}')`;
-
-let carta = document.getElementById('__Mujer.png');
-
-// Cuando decidas borrar una carta, cambia su imagen a "cartaVacia.png"
-carta.src = "./../img/cartas/cartaVacia.png";
