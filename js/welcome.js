@@ -1,7 +1,5 @@
-
-
 document.getElementById('start-button').addEventListener('click', function() {
-    // Muestra todo el contenido
+// Muestra todo el contenido
 document.getElementById('content').style.display = 'block';
 // Oculta el botón de inicio
 this.style.display = 'none';
@@ -74,7 +72,7 @@ let clases = {
     },
     "Humano": {
         1: "Caballero", //🏇
-        2: "Pícaro", //🗡️
+        2: "Picaro", //🗡️
         3: "Clerigo" //✨
     },
     "Orco": {
@@ -131,7 +129,7 @@ let atributosBase = {
     "Herrero": [3, 18, 3], //🔨
     "Paladin": [8, 12, 5], //🛡️
     "Caballero": [2, 20, 4], //🏇
-    "Pícaro": [6, 7, 12], //🗡️
+    "Picaro": [6, 7, 12], //🗡️
     "Clerigo": [8, 10, 5], //✨
     "Berserker": [1, 25, 3], //🪓
     "Chaman": [10, 8, 5], //🔮
@@ -181,6 +179,23 @@ setTimeout(function() {
     });
 
     boton.addEventListener('click', lanzarDados);
+
+    function lanzarDados() {
+        let atributos = ["Inteligencia", "Fuerza", "Agilidad"];
+        for (let i = 0; i < atributos.length; i++) {
+            let valorOriginal = atributoClase[i];
+            let dado1 = Math.floor(Math.random() * 6) + 1;
+            let dado2 = Math.floor(Math.random() * 6) + 1;
+            let totalDados = dado1 + dado2;
+            atributoClase[i] += totalDados;
+            
+            alert(`La suerte, proviene en forma de 2 dados de 6 caras, y al arrojarlos te devuelve un total de ${totalDados}.\nAhora tu atributo de ${atributos[i]} tiene un valor de: ${atributoClase[i]}`);
+            
+            let nuevoTexto = "(Base) + 🎲" + totalDados + " = " + atributoClase[i] + "(Total)";
+    
+            maquinaDeEscribir(nuevoTexto, atributos[i]);
+        }
+    }
     
     boton.addEventListener('click', function() {
     setTimeout(function() {
@@ -216,6 +231,16 @@ setTimeout(function() {
                 botonNuevo.style.backgroundColor = "#080325";
             });
 
+            //Guardamos la info localmente antes de hacer click para ir a la siguiente pagina.
+            localStorage.setItem('nombreUsuario', saludoInicial);
+            localStorage.setItem('nickPersonaje', nickName);
+            localStorage.setItem('origen', personaje[raza]);
+            localStorage.setItem('genero', generoTexto);
+            localStorage.setItem('clase', clases[personaje[raza]][clase]);
+            localStorage.setItem('inteligencia', atributoClase[0]);
+            localStorage.setItem('fuerza', atributoClase[1]);
+            localStorage.setItem('agilidad', atributoClase[2]);
+
             botonNuevo.addEventListener('click', function() {
                 window.location.href = "pages/personaje.html";
             });
@@ -238,32 +263,5 @@ setTimeout(function() {
 
     document.body.appendChild(boton);
 }, tiempoMensaje);
-
-function lanzarDados() {
-    let atributos = ["Inteligencia", "Fuerza", "Agilidad"];
-    for (let i = 0; i < atributos.length; i++) {
-        let valorOriginal = atributoClase[i];
-        let dado1 = Math.floor(Math.random() * 6) + 1;
-        let dado2 = Math.floor(Math.random() * 6) + 1;
-        let totalDados = dado1 + dado2;
-        atributoClase[i] += totalDados;
-        
-        alert(`La suerte, proviene en forma de 2 dados de 6 caras, y al arrojarlos te devuelve un total de ${totalDados}.\nAhora tu atributo de ${atributos[i]} tiene un valor de: ${atributoClase[i]}`);
-        
-        let nuevoTexto = "(Base) + 🎲" + totalDados + " = " + atributoClase[i] + "(Total)";
-
-        maquinaDeEscribir(nuevoTexto, atributos[i]);
-    }
-}
-
-//Guardamos la info localmente.
-localStorage.setItem('nombreUsuario', saludoInicial);
-localStorage.setItem('nickPersonaje', nickName);
-localStorage.setItem('origen', personaje[raza]);
-localStorage.setItem('genero', generoTexto);
-localStorage.setItem('clase', clases[personaje[raza]][clase]);
-localStorage.setItem('inteligencia', atributoClase[0]);
-localStorage.setItem('fuerza', atributoClase[1]);
-localStorage.setItem('agilidad', atributoClase[2]);
 
 });

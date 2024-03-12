@@ -6,6 +6,24 @@
 
 #content {
   display: none;
+  justify-content: center;
+}
+
+.start-buttonCFG {
+  background-image: url(../../img/botonStart.png);
+  width: 984px;
+  height: 472px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.start-buttonCFG:hover {
+  background-image: url(../../img/botonStart2.png);
 }
 
 .bodyIndex img {
