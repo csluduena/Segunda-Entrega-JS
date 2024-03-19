@@ -40,7 +40,6 @@ document.getElementById('borrarPersonaje').addEventListener('click', function() 
     }
 });
 
-//La siguiente sección es algo nuevo para mi, Utilizando almacenamiento local, descarga y carga de datos.
 document.getElementById('descargarPersonaje').addEventListener('click', function() {
     // Creamos un objeto con la info del personaje guardada en el JS del index.
     let personaje = {
@@ -54,17 +53,31 @@ document.getElementById('descargarPersonaje').addEventListener('click', function
         agilidad: localStorage.getItem('agilidad')
     };
 
-    let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(personaje));
+//TODO EL MEME PARA DESCARGAR EL PERSONAJE TANTO FILE PARA BACKUP COMO JPG. 
+    let zip = new JSZip();
 
-    // Descarga
-    let downloadAnchorNode = document.createElement('a');
-    downloadAnchorNode.setAttribute("href", dataStr);
-    /*NOTA: Abajo en el nombre del archivo podría agregar un ID por si tenemos 2 personajes iguales, de esa forma le asignamos ID diferentes al guardar, algo como "nick-elfo-mago-mujer-83855.json" */
-    downloadAnchorNode.setAttribute("download", nickPersonaje + "-" + personaje.origen + "-" + personaje.clase + "-" + personaje.genero + ".json");
-    document.body.appendChild(downloadAnchorNode);
-    downloadAnchorNode.click();
-    downloadAnchorNode.remove();
-    
+    // agregamos el archivo JSON al ZIP
+    let jsonStr = JSON.stringify(personaje);
+    zip.file(nickPersonaje + "-" + personaje.origen + "-" + personaje.clase + "-" + personaje.genero + ".json", jsonStr);
+
+    // usamos la cosa de html2canvas para crear una imagen de la página (Aunque solo elegimos el elemento de la carta)
+    let elementoCarta = document.querySelector('.info-personaje');
+
+    html2canvas(elementoCarta).then(function(canvas) {
+        let imgData = canvas.toDataURL('image/png');
+        let imgData64 = imgData.split(',')[1];
+
+        // agregamos la imagen al ZIP
+        zip.file(nickPersonaje + "-" + personaje.origen + "-" + personaje.clase + "-" + personaje.genero + ".png", imgData64, {base64: true});
+
+        // Generar el archivo ZIP y descargarlo
+        zip.generateAsync({type:"blob"}).then(function(content) {
+            let link = document.createElement('a');
+            link.download = nickPersonaje + ".zip";
+            link.href = URL.createObjectURL(content);
+            link.click();
+        });
+    });
 });
 
 //Carga de PJ
@@ -96,17 +109,6 @@ document.getElementById('cargarPersonaje').addEventListener('click', function() 
     }
     input.click();
 });
-
-// // Convierte la raza, clase y género a formato de nombre de archivo
-// let razaArchivo = origen.toLowerCase();
-// let claseArchivo = clase.replace(' ', ' ');
-// let generoArchivo = genero === 'Hombre' ? 'Hombre' : 'Mujer';
-
-// // Crea el nombre del archivo
-// let nombreArchivo = `${razaArchivo}_${claseArchivo}_${generoArchivo}.png`;
-
-// // Asigna el fondo al div .info-personaje
-// document.querySelector('.info-personaje').style.backgroundImage = `url('./../img/cartas/${nombreArchivo}')`;
 
 // Convierte la raza, clase y género a formato de nombre de archivo
 let razaArchivo = origen ? origen.toLowerCase() : '';
