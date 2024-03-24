@@ -197,29 +197,21 @@ setTimeout(function() {
     boton.addEventListener('click', lanzarDados);
 
     function lanzarDados() {
-        document.getElementById('dados-container').style.display = 'block';
-    }
-
-    // boton.addEventListener('click', lanzarDados);
-
-    // function lanzarDados() {
-    //     document.getElementById('dados-container').style.display = 'block';
-
-    //     let atributos = ["Inteligencia", "Fuerza", "Agilidad"];
-    //     for (let i = 0; i < atributos.length; i++) {
-    //         let valorOriginal = atributoClase[i];
-    //         let dado1 = Math.floor(Math.random() * 6) + 1;
-    //         let dado2 = Math.floor(Math.random() * 6) + 1;
-    //         let totalDados = dado1 + dado2;
-    //         atributoClase[i] += totalDados;
+        let atributos = ["Inteligencia", "Fuerza", "Agilidad"];
+        for (let i = 0; i < atributos.length; i++) {
+            let valorOriginal = atributoClase[i];
+            let dado1 = Math.floor(Math.random() * 6) + 1;
+            let dado2 = Math.floor(Math.random() * 6) + 1;
+            let totalDados = dado1 + dado2;
+            atributoClase[i] += totalDados;
             
-    //         alert(`La suerte, proviene en forma de 2 dados de 6 caras, y al arrojarlos te devuelve un total de ${totalDados}.\nAhora tu atributo de ${atributos[i]} tiene un valor de: ${atributoClase[i]}`);
+            alert(`La suerte, proviene en forma de 2 dados de 6 caras, y al arrojarlos te devuelve un total de ${totalDados}.\nAhora tu atributo de ${atributos[i]} tiene un valor de: ${atributoClase[i]}`);
             
-    //         let nuevoTexto = "(Base) + 🎲" + totalDados + " = " + atributoClase[i] + "(Total)";
+            let nuevoTexto = "(Base) + 🎲" + totalDados + " = " + atributoClase[i] + "(Total)";
     
-    //         maquinaDeEscribir(nuevoTexto, atributos[i]);
-    //     }
-    // }
+            maquinaDeEscribir(nuevoTexto, atributos[i]);
+        }
+    }
     
     boton.addEventListener('click', function() {
     setTimeout(function() {

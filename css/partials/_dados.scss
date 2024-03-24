@@ -1,18 +1,50 @@
-#dados-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 9999;
+#face1 {
+    background-image: url(../../img/1.png);
+    background-size: 104px;
+    margin-left: -2px;
 }
 
-.roll-button {
-    display:flex;
-    justify-content: center;
-    margin-top: 15rem;
-    
+#face2 {
+    background-image: url(../../img/2.png);
+    background-size: 104px;
+}
+
+#face3 {
+    background-image: url(../../img/3.png);
+    background-size: 104px;
+    background-position: center;
+}
+
+#face4 {
+    background-image: url(../../img/4.png);
+    background-size: 101px;
+    background-position: top;
+    margin-left: -2px;
+}
+
+#face5 {
+    background-image: url(../../img/5.png);
+    background-size: 104px;
+    margin-left: -5px;
+}
+
+#face6 {
+    background-image: url(../../img/6.png);
+    background-size: 100px;
+    background-position: top;
+}
+
+#dados-container {
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 500px; 
+    height: 335px;
+    background-color: rgb(70 45 84 / 98%);
+    z-index: 9999;
+    box-shadow: 18px 20px 0px 2000px rgb(0 0 0 / 90%);
+    border-radius: 2.5rem;
 }
 
 .configTextD {
@@ -31,21 +63,40 @@
     font-weight: bolder;
     cursor:pointer;
 }
+
+.roll-button {
+    display:flex;
+    justify-content: center;
+    margin-top: 15rem;
     
-.configTextD:hover {
-    color:white;
-    background-color: black;
 }
 
-.configTextD:hover {
-    color:white;
-    background-color: black;
+#roll-button {
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-top: -13rem;
+    margin-bottom: 11rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 10rem;
+    font-size: 18px;
+    font-weight: bolder;
+    cursor: pointer;
 }
 
-// .activarTiradaDados {
-//     display: flex;
-//     justify-content: center;
-// }
+    
+#roll-button:hover {
+    color:white;
+    background-color: rgb(144, 144, 144);
+    display: "tirar dados";
+}
+
+#roll-button:active {
+    color:rgb(0, 0, 0);
+    background-color: rgb(17, 0, 255);
+}
 
 .botonTirarDados {
     position: absolute;
@@ -58,65 +109,6 @@
     right: auto;
     text-align: center;
 }
-
-.Face1 {
-    background-image: url(../../img/dado1.png);
-    background-size: 104px;
-    margin-left: -2px;
-}
-
-.Face2 {
-    background-image: url(../../img/dado2.png);
-    background-size: 104px;
-}
-
-.Face3 {
-    background-image: url(../../img/dado3.png);
-    background-size: 104px;
-    background-position: center;
-}
-
-.Face4 {
-    background-image: url(../../img/dado4.png);
-    background-size: 101px;
-    background-position: top;
-    margin-left: -2px;
-}
-
-.Face5 {
-    background-image: url(../../img/dado5.png);
-    background-size: 104px;
-    margin-left: -5px;
-}
-
-.Face6 {
-    background-image: url(../../img/dado6.png);
-    background-size: 100px;
-    background-position: top;
-}
-
-// .buttonDice {
-//   position: relative;
-//   top: 80px;
-//   left: 10px;
-//   padding: 15px 50px;
-//   color: #fff;
-//   background-color: #f4d35e;
-//   border: none;
-//   font-size: 20px;
-//   border-radius: 20px;
-//   box-shadow: 1px 3px #50514f;
-//   outline: none;
-//   transition: 0.3s;
-// }
-
-// button:hover,
-// button:active {
-//   outline: none;
-//   background: #50514f;
-//   cursor: pointer;
-//   transform: translateY(15px);
-// }
 
 .game {
     display:flex;
@@ -132,22 +124,22 @@
 .containerD1 {
     position: relative;
     display: inline-block;
-    top: 136px;
+    top: -82px;
     display:flex;
     flex-direction: column;
     align-items: center;
-    right: -6rem;
+    right: -12rem;
 
 }
 
 .containerD2 {
     position: relative;
     display: inline-block;
-    top: 136px;
+    top: -82px;
     display:flex;
     flex-direction: column;
     align-items: center;
-    right: 6rem;
+    right: 12rem;
 }
 
 .dice {
@@ -284,4 +276,8 @@
 .six-5 {
     top: 50%;
     left: 80%;
+}
+
+.rolling {
+    animation: rollDiceAnimation 2s ease-in-out;
 }
